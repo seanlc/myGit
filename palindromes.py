@@ -10,9 +10,9 @@ def semordnilap(str1, str2):
     # Your code here
     if len(str1) != len(str2):
         return False
-    elif str1 == "" and str2 == "":
+    elif str1 == "" and str2 == "": #base case
         return True
-    else:
+    else:            #recursive case 
         return str1[0] == str2[len(str2) - 1] and semordnilap(str1[1:],str2[:len(str2) - 1])
 str1 = "palindromes"
 str2 = "semordnilap"
