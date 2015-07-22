@@ -65,7 +65,7 @@ class ceeLoGame(object):
                         print roller.getName() + " rolled triple 6. Winner!"
                         validScore = True
                     else:
-                        roller.setScore(self.die1.getValue * 100)
+                        roller.setScore(self.die1.getValue() * 100)
                         print roller.getName() + " rolled triple " + str(self.die1.getValue())
                         validScore = True
                 elif self.die1.getValue() == self.die2.getValue():
