@@ -49,6 +49,7 @@ class ceeLoGame(object):
     def roll(self):
         for roller in self.players:
             print roller.getName() + " is rolling"
+            time.sleep(1)
             print ""
             validScore = False
             while not validScore:
@@ -80,9 +81,9 @@ class ceeLoGame(object):
                     roller.setScore(self.die1.getValue())
                     print roller.getName() + " rolled a point of " + str(self.die1.getValue())
                     validScore = True
-                time.sleep(1)
-            print ""
+                time.sleep(2)
     def getWinner(self):
+        time.sleep(1)
         players.sort()
         winner = self.players[len(players) - 1]
         winner.setBank(winner.getBank() + self.pot)
@@ -109,7 +110,7 @@ class ceeLoGame(object):
         self.roll()
         self.getWinner()
         self.displayBanks()
-        answer = raw_input("Enter'p' to play again")
+        answer = raw_input("Enter'p' to play again: ")
         if answer.lower() == 'p':
             self.repeat = True
             self.play()
