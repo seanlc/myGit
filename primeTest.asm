@@ -6,6 +6,7 @@ TITLE Program Template (Template.asm)
 ; Status: Incomplete
 ;Modified by:
 INCLUDE Irvine32.inc
+
 .data
 prompt byte "Enter the number you suspect of being prime (-1 to exit): ",0
 primeanswer byte " is prime",0
@@ -13,6 +14,7 @@ notprimeanswer byte " is not prime",0
 number dword ?
 newline byte 0dh,0ah,0
 currentTest dword ?
+
 .code
 main PROC
 top:
@@ -33,7 +35,7 @@ L1:	cmp ebx, eax	; if divisor has reached dividend, the number is prime
 	cmp edx, 0		; compare remainder to 0
 	je notprime		; if remainder = 0, jump to prime block
 	inc ebx			; otherwise increment the divisor
-	mov eax, number	; restor the test number to eax
+	mov eax, number	; restore the test number to eax
 	jmp L1			;	and run loop again
 
 
